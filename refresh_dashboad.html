@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+  <title>Hello this is javascript api for refreshing your page every 15 mins</title>
+
+  <script type="text/javascript" src="http://tableau.yourcompanayname.com/javascripts/api/tableau-2.js"></script>
+<meta http-eqiv="refresh" content="15; url = "input your dashboard url here">
+  </head>
+
+  <body>
+
+  <div id="tableauViz"></div>
+
+ 
+<!--15000 = specify your dashboard size-->
+<script type='text/javascript'>
+
+var placeholderDiv = document.getElementById("tableauViz");
+
+  var url = "input your dashboard url here";
+
+  var options = {
+
+    hideTabs: true,
+
+    width: "100%",
+
+    height: "1080px"
+
+  };
+
+
+
+  var viz = new tableauSoftware.Viz(placeholderDiv, url, options);
+
+<!--15000 = refresh every 15 second-->
+
+setInterval(function () {viz.refreshDataAsync() }, 15000);
+
+ 
+
+</script>
+
+</body>
+
+</html>
